@@ -68,6 +68,36 @@ def foot
 return foot
 end
 
+def photos_count(link,key)
 
-show_photo(link,api_key)
+  or_hash = request(link,key)
+  filtrar = {}
+  arr = []
+
+  or_hash.each do |photo,array|
+    array.each do |i|
+      i['camera'].each do |key,value|
+       filtrar = Hash[ ['full_name'].zip(value if key =='full_name') ]
+
+        
+        
+      end
+    end
+  end
+
+return
+
+end
+
+
+
+asd = photos_count(link,api_key)
+
+
+
+
+
+
+
+
 
