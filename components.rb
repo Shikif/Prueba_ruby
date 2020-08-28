@@ -30,7 +30,7 @@ def show_photo(url,api_key)
     data = request(url,api_key)
 
     cards =
-    '<div class="row mx-auto">'
+    "\n\t\t\t<div class='row mx-auto'>"
 
     
     
@@ -41,8 +41,8 @@ def show_photo(url,api_key)
               <div class='card' style='width: 18rem;'>
                 <img src='#{i['img_src']}' class='card-img-top' alt='#{i['id']}'>
                 <div class='card-body'>
-                <h5 class='card-title'>#{i['id']}<br> Fecha: #{i['earth_date']}</h5>
-                <p class='card-text'>Info Camara: #{i['camera']}</p>
+                  <h5 class='card-title'>#{i['id']}<br> Fecha: #{i['earth_date']}</h5>
+                  <p class='card-text'>Info Camara: #{i['camera']}</p>
                 </div>
               </div>
             </div>"
@@ -67,31 +67,31 @@ def foot
 
 return foot
 end
-
+#Contar fotos
 def photos_count(link,key)
 
   or_hash = request(link,key)
   filtrar = {}
-  arr = []
+  
 
   or_hash.each do |photo,array|
     array.each do |i|
       i['camera'].each do |key,value|
-       filtrar = Hash[ ['full_name'].zip(value if key =='full_name') ]
-
-        
+         print value if key == 'full_name'
+         
         
       end
     end
   end
 
-return
+return 
 
 end
 
 
 
-asd = photos_count(link,api_key)
+
+
 
 
 
