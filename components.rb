@@ -1,9 +1,9 @@
 require_relative 'request'
 
 api_key = 'v2B27pvxnZQgU9GzpSegZWAyiQNXFea9ab2cnPIz'
-
-def get_mars_photo(key)
-    weather = get_data("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=#{key}")
+link = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key='
+def request(url,key)
+    weather = get_data("#{url}#{key}")
     return weather
 end
 
@@ -25,9 +25,9 @@ def head
               return head
 end
 
-def show_photo(api_key)
+def show_photo(url,api_key)
 
-    data = get_mars_photo(api_key)
+    data = request(url,api_key)
 
     cards =
     '<div class="row mx-auto">'
@@ -69,5 +69,5 @@ return foot
 end
 
 
-show_photo(api_key)
+show_photo(link,api_key)
 
