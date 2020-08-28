@@ -50,7 +50,7 @@ def show_photo(url,api_key)
             
         end
     cards+=
-    '</div>'
+    "\n\t\t\t\t</div>\n"
     end
     return cards
 end
